@@ -13,7 +13,13 @@ function render(variables = {}) {
   let city = variables.city || "City";
   let country = variables.country || "Country";
 
-  let positionClass = variables.socialMediaPosition || "position-right";
+  let positionClass;
+
+  if (variables.socialMediaPosition) {
+    positionClass = variables.socialMediaPosition;
+  } else {
+    positionClass = "position-right";
+  }
 
   let socialLinks = "";
   if (variables.twitter)
